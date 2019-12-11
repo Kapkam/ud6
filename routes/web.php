@@ -12,9 +12,11 @@
 */
 
 // Route::get('/', function () {
-//     return view('welcome');
+//     return view('layouts.app');
 // });
 
 Auth::routes();
 Route::get('/', 'BlogController@index')->name('welcome');
 // Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('/posts', 'PostController');
+Auth::routes();

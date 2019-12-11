@@ -12,6 +12,6 @@ class BlogController extends Controller
       $posts = Post::all();
       $categories = Category::all();
 
-      return view('welcome',['posts'=>$posts,'categories'=>$categories]);
+      return view('layouts.blog.index',['posts'=>$posts,'categories'=>$categories]);
     }
 }

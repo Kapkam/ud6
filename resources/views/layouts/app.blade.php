@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
   <meta charset="utf-8">
@@ -11,18 +10,20 @@
   <title>Blog Post  - Start Bootstrap Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="{{url('css/bootstrap.min.css')}}" rel="stylesheet">
 
   <!-- Custom styles for this template -->
-  <link href="css/blog-post.css" rel="stylesheet">
+  <link href="{{url('css/blog-post.css')}}" rel="stylesheet">
 
 </head>
-
 <body>
-  @include('layouts.header')
-  @yield('content')
-  @include('layouts.footer')
-  @include('layouts.scripts')
+    <div id="app">
+        @include('layouts.header')
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
+    @include('layouts.footer')
+    @include('layouts.scripts')
 </body>
-
 </html>
