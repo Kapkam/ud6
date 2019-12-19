@@ -20,3 +20,5 @@ Route::get('/', 'BlogController@index')->name('welcome');
 // Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('/posts', 'PostController');
 Auth::routes();
+Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
+Route::get('/editor', 'GestorController@index')->name('editor');
