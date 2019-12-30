@@ -21,4 +21,7 @@ Route::get('/', 'BlogController@index')->name('welcome');
 Route::resource('/posts', 'PostController');
 Auth::routes();
 Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
+Route::get('/edit/{id}', 'AdminController@edit');
+Route::get('/eliminar/{id}', 'AdminController@destroy');
+Route::post('/update', 'AdminController@update')->name('adminUpdate');
 Route::get('/editor', 'GestorController@index')->name('editor');
